@@ -16,7 +16,7 @@
 
     <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Key="DestinationTemplate">
-            <Border BorderBrush="Black" BorderThickness="0" CornerRadius="2" Background="Purple" Width="300" Canvas.ZIndex="20">
+            <Border BorderBrush="Black" BorderThickness="0" CornerRadius="2" Background="Brown" Width="300" Canvas.ZIndex="20">
                 <StackPanel Margin="4">
                     <TextBlock x:Name="NameBlock" TextWrapping="NoWrap" Text="{Binding Content}" FontSize="24" VerticalAlignment="Center" Margin="0,0,4,0" d:LayoutOverrides="Width"
                                TextTrimming="WordEllipsis"/>
@@ -33,7 +33,7 @@
         <Grid Margin="12,0">
             <controls:ARDisplay Name="ardisplay" AttitudeRefreshRate="50" MovementThreshold="10">
                 <controls:VideoPreview x:Name="videoPreview" Canvas.ZIndex="1"/>
-                <controls:WorldView x:Name="worldView" ItemTemplate="{StaticResource DestinationTemplate}" MinItemScale="0.1" MaxItemScale="1.0" FarClippingPlane="100000000000.0" NearClippingPlane="1.0" Canvas.ZIndex="1"/>
+                <controls:WorldView x:Name="worldView" ItemTemplate="{StaticResource DestinationTemplate}" MinItemScale="0.1" MaxItemScale="1.0" FarClippingPlane="100000000000.0" NearClippingPlane="1.0" Canvas.ZIndex="1" SelectionChanged="WorldView_OnSelectionChanged"/>
             </controls:ARDisplay>
         </Grid>
         

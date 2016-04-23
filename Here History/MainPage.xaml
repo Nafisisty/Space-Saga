@@ -10,8 +10,8 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Landscape"
-    shell:SystemTray.IsVisible="False">
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource BackgroundImage}">
@@ -23,7 +23,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock Style="{StaticResource PageHeader}" Text="Here History"></TextBlock>
+            <TextBlock Style="{StaticResource PageHeader}" Text="Space Saga"></TextBlock>
 
             <Grid Grid.Row="1" VerticalAlignment="Center">
                 <StackPanel>
@@ -33,5 +33,25 @@
                 </StackPanel>
             </Grid>
         </Grid>
+
+        <Grid x:Name="loading_page" Background="Black" Opacity=".7" Visibility="Visible">
+            <Grid VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ProgressBar IsIndeterminate="True" Foreground="{StaticResource PhoneAccentBrush}" Background="Transparent"></ProgressBar>
+                <TextBlock Grid.Row="1" Text="Getting information. Please wait......" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+        </Grid>
     </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="Brown" Mode="Minimized">
+            <shell:ApplicationBarIconButton x:Name="add_appbarbtn" IconUri="/Images/add.png" Text="add history" Click="Add_appbarbtn_OnClick"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
 </phone:PhoneApplicationPage>
+    
+    

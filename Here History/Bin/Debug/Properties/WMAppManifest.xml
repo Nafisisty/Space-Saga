@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{5a172e36-0610-42f8-923d-5b3191bcaf04}" Title="Here_History" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Here_History author" Description="Sample description" Publisher="Here_History" PublisherID="{cfdfce9a-fb1e-495a-aecd-1fe903fc1ee8}">
+  <App xmlns="" ProductID="{5a172e36-0610-42f8-923d-5b3191bcaf04}" Title="Space Saga" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Here_History author" Description="Sample description" Publisher="Here_History" PublisherID="{cfdfce9a-fb1e-495a-aecd-1fe903fc1ee8}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -22,7 +22,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>Here_History</Title>
+          <Title>Space Saga</Title>
           <BackContent></BackContent>
           <BackBackgroundImageURI></BackBackgroundImageURI>
           <BackTitle></BackTitle>

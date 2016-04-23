@@ -4,10 +4,10 @@
 
     <!--Pivotitem Margin-->
     <!--Brand Primary Color-->
-    <SolidColorBrush x:Key="BrandPrimaryColor" Color="#55B947"/>
+    <SolidColorBrush x:Key="BrandPrimaryColor" Color="Brown"/>
 
     <!--Brand Secondary Color-->
-    <SolidColorBrush x:Key="BrandSecondaryColor" Color="#333333"/>
+    <SolidColorBrush x:Key="BrandSecondaryColor" Color="Bisque"/>
 
     <!--Background Image-->
     <ImageBrush x:Key="BackgroundImage" ImageSource="/Images/BG.png"/>
@@ -59,6 +59,20 @@
         <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>
 
+    <!--Add History TextBlock-->
+    <Style x:Key="HistoryAddTextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="Brown"></Setter>
+        <Setter Property="Margin" Value="10,0"></Setter>
+    </Style>
+
+
+    <!--Add History TextBox-->
+    <Style x:Key="HistoryAddTextBox" TargetType="TextBox">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Padding" Value="0"></Setter>
+    </Style>
 
     <!--Page Header-->
     <Style x:Key="PageHeader" TargetType="TextBlock">

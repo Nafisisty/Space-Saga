@@ -16,5 +16,12 @@ namespace Here_History
         {
             InitializeComponent();
         }
+
+        private async void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            await App._ViewModelLocator.Main.LoadSeachedHistoryData(searchTextBox.Text);
+
+            NavigationService.Navigate(new Uri("/SearchResult.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

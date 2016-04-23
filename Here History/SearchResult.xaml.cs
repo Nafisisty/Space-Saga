@@ -5,34 +5,28 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using Windows.Devices.Geolocation;
 using Here_History.Models;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
 namespace Here_History
 {
-    public partial class CurrentPlaceHistory : PhoneApplicationPage
+    public partial class SearchResult : PhoneApplicationPage
     {
-        public CurrentPlaceHistory()
+        public SearchResult()
         {
             InitializeComponent();
         }
 
-        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        private void searchedHistoryListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-        }
-
-        private void historyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if(historyListBox.SelectedItem == null)
+            if (searchedHistoryListBox.SelectedItem == null)
                 return;
-            var content = historyListBox.SelectedItem as HistoryDataModel;
+            var content = searchedHistoryListBox.SelectedItem as HistoryDataModel;
 
             PhoneApplicationService.Current.State["param"] = content;
             NavigationService.Navigate(new Uri("/HistoryDetail.xaml", UriKind.RelativeOrAbsolute));
-            historyListBox.SelectedIndex = -1;
+            searchedHistoryListBox.SelectedIndex = -1;
         }
     }
 }

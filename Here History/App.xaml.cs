@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Device.Location;
 using System.Diagnostics;
 using System.Resources;
 using System.Windows;
@@ -20,6 +21,8 @@ namespace Here_History
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
         private static ViewModelLocator _viewModelLocator;
+
+        public static readonly GeoCoordinateWatcher _GeoWatcher = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
 
         public static ViewModelLocator _ViewModelLocator
         {

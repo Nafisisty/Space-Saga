@@ -15,5 +15,18 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="{StaticResource BackgroundImage}">
+        <Grid Background="White" Opacity=".5">
+        </Grid>
+        <Grid Style="{StaticResource AppMargin}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Text="Search" Style="{StaticResource PageHeader}"></TextBlock>
+            <TextBox x:Name="searchTextBox" Grid.Row="1" Background="Transparent" BorderBrush="Bisque"></TextBox>
+            <Button x:Name="searchButton" Grid.Row="2" Content="search" Style="{StaticResource ButtonStyles}" Click="searchButton_Click"></Button>
+        </Grid>
     </Grid>
 </phone:PhoneApplicationPage>

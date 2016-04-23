@@ -8,11 +8,21 @@ namespace Here_History.Support
 {
      public  static class RestUrl
     {
-         private static string mainDomain = "http://192.168.1.15/space/api/History/";
+         private static string mainDomain = "http://spacesaga.azurewebsites.net/api/history/";
 
          public static string GetHistoryByGeoPosition(string latitude, string longitude)
          {
              return string.Format("{0}GetHistory/{1}/{2}/", mainDomain, latitude, longitude);
+         }
+
+         public static string GetHistoryByString(string searchKeyword)
+         {
+             return string.Format("{0}search/{1}/", mainDomain, searchKeyword);
+         }
+
+         public static string PostHistoryByUser()
+         {
+             return string.Format("{0}save/");
          }
     }
 }
