@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Microsoft.Ajax.Utilities;
 using NasaSpaceHistoryApi.Models;
 using NasaSpaceHistoryApi.Services;
 
@@ -24,21 +25,36 @@ namespace NasaSpaceHistoryApi.Controllers
         // GET api/History/GetHistory/123.456/321.654 
         [HttpGet]
         [Route("GetHistory/{Latitude:double}/{Longitude:double}")]
-        public List<HistoryView> GetHistory(string latitude, string longitude)
+        public List<HistoryView> GetHistory(string latitude, string longitude)      
         {
            List<HistoryView> historyView = historyService.GetHistory(latitude, longitude);
+
            return historyView;
         }
 
-        // GET api/history/5
-        public string Get(int id)
+        // GET api/history/Search/abcxyz
+        [HttpGet]
+        [Route("Search/{keyword}")]
+        public List<HistoryView> Search(string keyword)
         {
-            return "value";
+            List<HistoryView> historyView = historyService.Search(keyword);
+
+            return historyView;
         }
 
         // POST api/history
-        public void Post([FromBody]string value)
+        [HttpPost]
+        [Route("Save")]
+        public string Save( HistoryView historyView)
         {
+            string msg="Invalid Data";
+            if (historyView ==null)
+            {
+
+                return msg;
+            }
+            msg = historyService.Save(historyView);
+            return msg;
         }
 
         // PUT api/history/5

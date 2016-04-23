@@ -22,5 +22,17 @@ namespace NasaSpaceHistoryApi.Services
             return historyView;
         }
 
+        public List<HistoryView> Search(string keyword)
+        {
+            List<HistoryView> historyView = histroyRepository.Search(keyword);
+            return historyView;             
+        }
+
+        public string  Save(HistoryView historyView)
+        {
+            string msg = histroyRepository.Save(historyView);
+            return msg;
+        }
+       
     }
 }
